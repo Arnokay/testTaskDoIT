@@ -1,0 +1,29 @@
+
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  (mapClick)="mapClicked($event)">
+
+  <agm-marker
+    *ngFor="let m of markers; let i = index"
+    (markerClick)="removeMarker(m.lat, m.lng)"
+    [latitude]="m.lat"
+    [longitude]="m.lng">
+  </agm-marker>
+
+</agm-map>
+
+<div *ngIf="!visible">
+  <button
+    (click)="createMarkers()">
+    Show Saved Markers
+  </button>
+
+  <button
+    (click)="sendMarkers()">
+    Save Markers
+  </button>
+</div>
+
