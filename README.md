@@ -34,3 +34,5 @@ $ ng serve
 ```
 
 Now everything is ready.
+
+Use `Login: Lucifer`, `Password: Lucifer` for authorization.
