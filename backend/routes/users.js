@@ -8,7 +8,7 @@ const userCtrl = new UserController(User);
 
 router.route('/')
   .get(userCtrl.list)
-  .post(userCtrl.create);
+  .post(userCtrl.createMainUser);
 
 router.route('/:userId')
   .get(userCtrl.get);

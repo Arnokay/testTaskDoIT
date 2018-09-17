@@ -20,6 +20,9 @@ export class AuthService {
   }
 
   login(username, password): Promise<string> {
+    if(!localStorage.getItem(TOKEN_NAME)) {
+      this.createUser();
+    }
     return this.http
       .post(`${this.url}/token`, JSON.stringify({username, password}), { headers: this.headers })
       .toPromise()
@@ -28,6 +31,16 @@ export class AuthService {
 
   delToken() {
     localStorage.removeItem(TOKEN_NAME);
+  }
+
+  createUser() {
+    return this.http
+      .post('http://localhost:3000/api/users', {}, {headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' })})
+      .toPromise()
+      .then(
+        res => console.log(res.json()),
+        err => console.log(err)
+      );
   }
 
 }

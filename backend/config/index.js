@@ -11,5 +11,7 @@ export default {
   mongoUrl: MONGO_URL || "",
   mongoUrlTest: MONGO_URL_TEST || "",
   jwtSecret: JWT_SECRET,
-  jwtDuration: "365 days"
+  jwtDuration: "365 days",
+  username: 'Lucifer',
+  password: 'Lucifer'
 };

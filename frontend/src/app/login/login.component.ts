@@ -11,6 +11,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private auth:AuthService, private router:Router) {
 
+
+
     this.visible = localStorage.getItem(TOKEN_NAME) == null;
   }
 
